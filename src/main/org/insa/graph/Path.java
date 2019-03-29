@@ -2,7 +2,9 @@ package org.insa.graph;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 /**
  * <p>
@@ -29,13 +31,34 @@ public class Path {
      * 
      * @throws IllegalArgumentException If the list of nodes is not valid, i.e. two
      *         consecutive nodes in the list are not connected in the graph.
-     * 
-     * @deprecated Need to be implemented.
      */
     public static Path createFastestPathFromNodes(Graph graph, List<Node> nodes)
             throws IllegalArgumentException {
         List<Arc> arcs = new ArrayList<Arc>();
-        // TODO:
+        if(nodes.size()>1) {
+        	for(int i=0;i<nodes.size()-1;i++) {
+    	        List<Arc> arcs_tmp = nodes.get(i).getSuccessors();
+    	        Iterator<Arc> it = arcs_tmp.iterator();
+    	        double time = 0;
+    	        Arc arc_choisi = null;
+    	        boolean first_element = false;
+    	        while(it.hasNext()) {
+    	        	Arc element = it.next();
+    	        	if(element.getDestination() == nodes.get(i+1)) {
+    	        		if(!first_element) {
+    	        			time = element.getMinimumTravelTime();
+    	        			arc_choisi = element;
+    	        			first_element = true;
+    	        		}
+    	        		if(element.getMinimumTravelTime() < time) {
+    	        			time = element.getMinimumTravelTime();
+    	        			arc_choisi = element;
+    	        		}
+    	        	}
+    	        }
+    	        arcs.add(arc_choisi);
+            }
+        }
         return new Path(graph, arcs);
     }
 
@@ -197,11 +220,26 @@ public class Path {
      * </ul>
      * 
      * @return true if the path is valid, false otherwise.
-     * 
-     * @deprecated Need to be implemented.
      */
     public boolean isValid() {
-        // TODO:
+    	if(this.isEmpty() || this.size() == 1) {
+    		return true;
+    	}
+    	else {
+    		if(this.arcs.get(0).getOrigin() == this.getOrigin()) {
+    			boolean isValid = true;
+    			Iterator<Arc> it = arcs.iterator();
+    			Arc arc_source = it.next();
+    			while(it.hasNext()) {
+    				Arc arc_destination = it.next();
+    				if(arc_source.getDestination() != arc_destination.getOrigin()) {
+    					isValid = false;
+    				}
+    				arc_source = arc_destination;
+    			}
+    			return isValid;
+    		}
+    	}
         return false;
     }
 
@@ -209,12 +247,15 @@ public class Path {
      * Compute the length of this path (in meters).
      * 
      * @return Total length of the path (in meters).
-     * 
-     * @deprecated Need to be implemented.
      */
     public float getLength() {
-        // TODO:
-        return 0;
+    	float length = 0;
+        Iterator<Arc> it=arcs.iterator();
+        while(it.hasNext()) {
+        	Arc element = it.next();
+        	length += element.getLength();
+        }
+        return length;
     }
 
     /**
@@ -224,12 +265,15 @@ public class Path {
      * 
      * @return Time (in seconds) required to travel this path at the given speed (in
      *         kilometers-per-hour).
-     * 
-     * @deprecated Need to be implemented.
      */
     public double getTravelTime(double speed) {
-        // TODO:
-        return 0;
+    	double travelTime = 0;
+        Iterator<Arc> it=arcs.iterator();
+        while(it.hasNext()) {
+        	Arc element = it.next();
+        	travelTime += element.getTravelTime(speed);
+        }
+        return travelTime;
     }
 
     /**
@@ -237,12 +281,15 @@ public class Path {
      * on every arc.
      * 
      * @return Minimum travel time to travel this path (in seconds).
-     * 
-     * @deprecated Need to be implemented.
      */
     public double getMinimumTravelTime() {
-        // TODO:
-        return 0;
+    	double travelTime = 0;
+        Iterator<Arc> it=arcs.iterator();
+        while(it.hasNext()) {
+        	Arc element = it.next();
+        	travelTime += element.getMinimumTravelTime();
+        }
+        return travelTime;
     }
 
 }
