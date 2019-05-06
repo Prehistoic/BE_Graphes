@@ -80,11 +80,15 @@ public class Label implements Comparable<Label> {
 		return this.cost;
 	}
 	
+	public float getTotalCost() {
+		return this.cost;
+	}
+	
 	public int compareTo(Label l) {
-		if(this.getCost() > l.getCost()) {
+		if(this.getTotalCost() > l.getTotalCost()) {
 			return 1;
 		}
-		else if(this.getCost() == l.getCost()) {
+		else if(this.getTotalCost() == l.getTotalCost()) {
 			return 0;
 		}
 		else {
