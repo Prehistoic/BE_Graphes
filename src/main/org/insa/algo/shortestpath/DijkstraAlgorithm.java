@@ -4,7 +4,6 @@ import org.insa.algo.AbstractSolution.Status;
 import org.insa.algo.utils.BinaryHeap;
 import org.insa.graph.*;
 import java.util.*;
-import java.lang.*;
 
 public class DijkstraAlgorithm extends ShortestPathAlgorithm {
 
@@ -81,14 +80,14 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
     		}
     	}
     	
+    	// Reverse the path...
+        Collections.reverse(shortestPath);
+    	
     	Path pathSolution = new Path(data.getGraph(), shortestPath);
     	if(status == Status.OPTIMAL) {
     		// The destination has been found, notify the observers.
             notifyDestinationReached(data.getDestination());
     	}
-    	
-    	// Reverse the path...
-        Collections.reverse(shortestPath);
         
         System.out.println("Nb arcs = "+nb_arc+"\n");
     	

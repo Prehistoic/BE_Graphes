@@ -1,14 +1,18 @@
 package org.insa.graph;
 
+import org.insa.algo.shortestpath.ShortestPathData;
+import org.insa.algo.AbstractInputData;
 import org.insa.graph.Label;
 
 public class LabelStar extends Label implements Comparable<Label> {
 	
-	public Node destination;
+	private float costToDestination;
+	private ShortestPathData data;
 	
-	public LabelStar(int node_id, Node destination) {
+	public LabelStar(int node_id, ShortestPathData data) {
 		super(node_id);
-		this.destination=destination;
+		this.data = data;
+		this.costToDestination = 0;
 	}
 	
 	public LabelStar(int node_id, boolean mark, float cost, Arc father) {
@@ -16,9 +20,17 @@ public class LabelStar extends Label implements Comparable<Label> {
 	}
 	
 	public float getTotalCost() {
-		float costToOrigin = this.getCost();
-		double costToDestination=Point.distance(this.getFather().getDestination().getPoint(),this.destination.getPoint());
-		return costToOrigin + (float)costToDestination;
+		return this.getCost() + this.costToDestination;
+	}
+	
+	public void setCostToDestination() {
+		if(data.getMode() == AbstractInputData.Mode.LENGTH) {
+			this.costToDestination = (float)Point.distance(this.getFather().getDestination().getPoint(),this.data.getDestination().getPoint());
+		}
+		else {
+			int vitesse = Math.max(this.data.getMaximumSpeed(), this.data.getGraph().getGraphInformation().getMaximumSpeed());
+			this.costToDestination = (float)Point.distance(this.getFather().getDestination().getPoint(),this.data.getDestination().getPoint())/(vitesse*1000.0f/3600.0f);
+		}
 	}
 
 }
