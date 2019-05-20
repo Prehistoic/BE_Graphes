@@ -23,7 +23,7 @@ import org.insa.graph.io.BinaryGraphReader;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class DijkstraAlgorithmTest {
+public class AStarAlgorithmTest {
 	
 	// Small graph use for tests
 	private static Graph graph;
@@ -78,7 +78,7 @@ public class DijkstraAlgorithmTest {
         			ArcInspector inspector = ArcInspectorFactory.getAllFilters().get(0);
         			ShortestPathData data = new ShortestPathData(graph,nodes.get(i),nodes.get(j),inspector);
         			
-        			DijkstraAlgorithm algoD = new DijkstraAlgorithm(data);
+        			AStarAlgorithm algoD = new AStarAlgorithm(data);
         		    BellmanFordAlgorithm algoB = new BellmanFordAlgorithm(data);
         		        
         		    // On execute l'algorithme de Dijkstra
@@ -245,10 +245,10 @@ public class DijkstraAlgorithmTest {
     	else {
     		ArcInspector inspector = null;
     		if(mode == "time") {
-    			inspector = ArcInspectorFactory.getAllFilters().get(2);
+    			inspector = ArcInspectorFactory.getAllFilters().get(0);
     		}
     		else if(mode == "length") {
-    			inspector = ArcInspectorFactory.getAllFilters().get(0);
+    			inspector = ArcInspectorFactory.getAllFilters().get(2);
     		}
     		else {
     			System.out.println("Mauvais mode !");
@@ -257,7 +257,7 @@ public class DijkstraAlgorithmTest {
     		if(inspector !=null) {
     			ShortestPathData data = new ShortestPathData(graph,graph.get(origine),graph.get(destination),inspector);
     			
-    			DijkstraAlgorithm algoD = new DijkstraAlgorithm(data);
+    			AStarAlgorithm algoD = new AStarAlgorithm(data);
     		    BellmanFordAlgorithm algoB = new BellmanFordAlgorithm(data);
     		    
     		    // On execute l'algorithme de Dijkstra
