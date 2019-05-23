@@ -31,7 +31,7 @@ public class testPerformance {
 		int i,j;
 		for(i=0;i<mapNameTab.size();i++) {
 			String mapName = mapNameTab.get(i);
-			for(j=0;j<5;j++) {
+			for(j=1;j<=5;j++) {
 				GraphReader reader = new BinaryGraphReader(new DataInputStream(new BufferedInputStream(new FileInputStream(mapName))));
 				graph = reader.read();
 				
@@ -39,8 +39,8 @@ public class testPerformance {
 				int destination = (int)(Math.random()*graph.size());
 				
 				System.out.println("Map: "+mapName+" | test n°"+j);
-				testScenario(mapName,"time",origine,destination);
-				testScenario(mapName,"length",origine,destination);
+				testScenario(mapName,"temps",origine,destination);
+				testScenario(mapName,"distance",origine,destination);
 				System.out.println("");
 			}
 		}
@@ -59,10 +59,10 @@ public class testPerformance {
     	}
     	else {
     		ArcInspector inspector = null;
-    		if(mode == "time") {
+    		if(mode == "temps") {
     			inspector = ArcInspectorFactory.getAllFilters().get(2);
     		}
-    		else if(mode == "length") {
+    		else if(mode == "distance") {
     			inspector = ArcInspectorFactory.getAllFilters().get(0);
     		}
     		else {
@@ -75,26 +75,46 @@ public class testPerformance {
     			DijkstraAlgorithm algoD = new DijkstraAlgorithm(data);
     		    AStarAlgorithm algoA = new AStarAlgorithm(data);
     		    
+    		    long tmpStart;
+    		    long tmpEnd;
+    		    
+    		    // On récupère le temps de départ
+    		    tmpStart=System.nanoTime();
     		    // On execute l'algorithme de Dijkstra
     		    BinaryHeap<Label> tas = new BinaryHeap<Label>();
     		    ArrayList<Label> list_label = algoD.Initialisation(data,tas);
     		    algoD.Iterations(list_label,tas, data);
+    		    ShortestPathSolution solutionD = algoD.findShortestPath(data,list_label);
+    		    // On récupère le temps d'arrivée
+    		    tmpEnd=System.nanoTime();
     		    
-    		    // On récupère les solutions
-    		    ShortestPathSolution solutionD = null;
-    		    ShortestPathSolution solutionA = null;
-    	        solutionD = algoD.findShortestPath(data,list_label);
-    	        solutionA = algoA.findShortestPath(data,list_label);
+    		    float tmpExecDijkstra = (tmpEnd - tmpStart)/1000000.0f;
+    		    
+    		    // On remet les indicateurs de temps à 0
+    		    tmpStart = 0;
+    		    tmpEnd = 0;
+    		    
+    		    // Idem pour A*
+    		    tmpStart=System.nanoTime();
+    		    
+    		    BinaryHeap<Label> tasA = new BinaryHeap<Label>();
+    		    ArrayList<Label> list_labelA = algoD.Initialisation(data,tasA);
+    		    algoA.Iterations(list_labelA,tasA, data);
+    		    ShortestPathSolution solutionA = algoA.findShortestPath(data,list_labelA);
+    		    
+    		    tmpEnd=System.nanoTime();
+    		    
+    		    float tmpExecAStar = (tmpEnd - tmpStart)/1000000.0f;
     	        
     	        // Si le path n'existe pas
     	        if(solutionD.getStatus() == Status.INFEASIBLE) {
-    	        	System.out.println("No path from "+origine+" to "+destination);
+    	        	System.out.println("Pas de chemin entre "+origine+" et "+destination);
     	        }
     	        // Si le path existe, on affiche le temps nécessaire aux calculs pour les deux algorithmes
     	        else {
-        	        System.out.println("Path from "+origine+" to "+destination);
-        	        System.out.println("Time needed for Dijkstra: "+solutionD.getSolvingTime());
-        	        System.out.println("Time needed for AStar: "+solutionA.getSolvingTime());
+        	        System.out.println("Chemin entre "+origine+" et "+destination+" | Mode choisi : "+mode);
+        	        System.out.println("Temps pour Dijkstra: "+tmpExecDijkstra);
+        	        System.out.println("Temps pour AStar: "+tmpExecAStar);
     	        }
     		}
     	}

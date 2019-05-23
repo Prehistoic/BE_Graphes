@@ -1,0 +1,111 @@
+Map: /home/commetud/3eme Annee MIC/Graphes-et-Algorithmes/Maps/insa.mapgr | test n°1
+Chemin entre 686 et 282 | Mode choisi : temps
+Temps pour Dijkstra: 13.985105
+Temps pour AStar: 1.845154
+Chemin entre 686 et 282 | Mode choisi : distance
+Temps pour Dijkstra: 1.435754
+Temps pour AStar: 1.074743
+
+Map: /home/commetud/3eme Annee MIC/Graphes-et-Algorithmes/Maps/insa.mapgr | test n°2
+Chemin entre 389 et 1038 | Mode choisi : temps
+Temps pour Dijkstra: 2.269958
+Temps pour AStar: 1.929621
+Chemin entre 389 et 1038 | Mode choisi : distance
+Temps pour Dijkstra: 2.165034
+Temps pour AStar: 1.606414
+
+Map: /home/commetud/3eme Annee MIC/Graphes-et-Algorithmes/Maps/insa.mapgr | test n°3
+Pas de chemin entre 42 et 1252
+Pas de chemin entre 42 et 1252
+
+Map: /home/commetud/3eme Annee MIC/Graphes-et-Algorithmes/Maps/insa.mapgr | test n°4
+Chemin entre 991 et 455 | Mode choisi : temps
+Temps pour Dijkstra: 1.38783
+Temps pour AStar: 1.413636
+Chemin entre 991 et 455 | Mode choisi : distance
+Temps pour Dijkstra: 0.901654
+Temps pour AStar: 0.904552
+
+Map: /home/commetud/3eme Annee MIC/Graphes-et-Algorithmes/Maps/insa.mapgr | test n°5
+Pas de chemin entre 1171 et 595
+Pas de chemin entre 1171 et 595
+
+Map: /home/commetud/3eme Annee MIC/Graphes-et-Algorithmes/Maps/belgium.mapgr | test n°1
+Chemin entre 980831 et 821292 | Mode choisi : temps
+Temps pour Dijkstra: 578.55396
+Temps pour AStar: 558.8917
+Chemin entre 980831 et 821292 | Mode choisi : distance
+Temps pour Dijkstra: 572.6263
+Temps pour AStar: 561.04535
+
+Map: /home/commetud/3eme Annee MIC/Graphes-et-Algorithmes/Maps/belgium.mapgr | test n°2
+Chemin entre 157547 et 106536 | Mode choisi : temps
+Temps pour Dijkstra: 614.2526
+Temps pour AStar: 353.34564
+Chemin entre 157547 et 106536 | Mode choisi : distance
+Temps pour Dijkstra: 275.27597
+Temps pour AStar: 274.6489
+
+Map: /home/commetud/3eme Annee MIC/Graphes-et-Algorithmes/Maps/belgium.mapgr | test n°3
+Chemin entre 558201 et 790368 | Mode choisi : temps
+Temps pour Dijkstra: 501.7687
+Temps pour AStar: 508.0421
+Chemin entre 558201 et 790368 | Mode choisi : distance
+Temps pour Dijkstra: 386.77625
+Temps pour AStar: 386.02267
+
+Map: /home/commetud/3eme Annee MIC/Graphes-et-Algorithmes/Maps/belgium.mapgr | test n°4
+Chemin entre 230622 et 41271 | Mode choisi : temps
+Temps pour Dijkstra: 128.762
+Temps pour AStar: 2364.8867
+Chemin entre 230622 et 41271 | Mode choisi : distance
+Temps pour Dijkstra: 142.87624
+Temps pour AStar: 142.59157
+
+Map: /home/commetud/3eme Annee MIC/Graphes-et-Algorithmes/Maps/belgium.mapgr | test n°5
+Chemin entre 993293 et 45064 | Mode choisi : temps
+Temps pour Dijkstra: 403.9708
+Temps pour AStar: 404.86484
+Chemin entre 993293 et 45064 | Mode choisi : distance
+Temps pour Dijkstra: 341.27087
+Temps pour AStar: 342.76904
+
+Map: /home/commetud/3eme Annee MIC/Graphes-et-Algorithmes/Maps/fractal.mapgr | test n°1
+Chemin entre 413334 et 540679 | Mode choisi : temps
+Temps pour Dijkstra: 774.46356
+Temps pour AStar: 773.0243
+Chemin entre 413334 et 540679 | Mode choisi : distance
+Temps pour Dijkstra: 819.41394
+Temps pour AStar: 840.1032
+
+Map: /home/commetud/3eme Annee MIC/Graphes-et-Algorithmes/Maps/fractal.mapgr | test n°2
+Chemin entre 44192 et 117228 | Mode choisi : temps
+Temps pour Dijkstra: 559.8189
+Temps pour AStar: 560.82196
+Chemin entre 44192 et 117228 | Mode choisi : distance
+Temps pour Dijkstra: 586.0965
+Temps pour AStar: 581.44214
+
+Map: /home/commetud/3eme Annee MIC/Graphes-et-Algorithmes/Maps/fractal.mapgr | test n°3
+Chemin entre 696430 et 179027 | Mode choisi : temps
+Temps pour Dijkstra: 742.7334
+Temps pour AStar: 746.968
+Chemin entre 696430 et 179027 | Mode choisi : distance
+Temps pour Dijkstra: 828.9069
+Temps pour AStar: 815.91187
+
+Map: /home/commetud/3eme Annee MIC/Graphes-et-Algorithmes/Maps/fractal.mapgr | test n°4
+Chemin entre 738046 et 303124 | Mode choisi : temps
+Temps pour Dijkstra: 238.24174
+Temps pour AStar: 239.2016
+Chemin entre 738046 et 303124 | Mode choisi : distance
+Temps pour Dijkstra: 237.9099
+Temps pour AStar: 241.52467
+
+Map: /home/commetud/3eme Annee MIC/Graphes-et-Algorithmes/Maps/fractal.mapgr | test n°5
+Chemin entre 432526 et 894806 | Mode choisi : temps
+Temps pour Dijkstra: 552.9114
+Temps pour AStar: 549.8431
+Chemin entre 432526 et 894806 | Mode choisi : distance
+Temps pour Dijkstra: 578.05725
+Temps pour AStar: 575.3705
