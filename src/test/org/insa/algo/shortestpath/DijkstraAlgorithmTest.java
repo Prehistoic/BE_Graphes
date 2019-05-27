@@ -72,6 +72,7 @@ public class DijkstraAlgorithmTest {
     @Test
     public void testDoRun	() {
         int i,j;
+        System.out.println("Tests sur notre propre graphe :\n");
         for(i=0;i<nodes.size();i++) {
         	for(j=0;j<nodes.size();j++) {
         		if(i!=j) {
@@ -106,11 +107,13 @@ public class DijkstraAlgorithmTest {
         		}
         	}
         }
+        System.out.println("");
     }
     
     @Test
     public void testWithMapInsa() throws Exception {
     	String mapName = "/home/commetud/3eme Annee MIC/Graphes-et-Algorithmes/Maps/insa.mapgr";
+    	System.out.println("Tests sur la carte de l'INSA :\n");
     	int origine,destination;
     	
     	System.out.println("Cas attendu: chemin nul");
@@ -151,6 +154,7 @@ public class DijkstraAlgorithmTest {
     @Test
     public void testWithMapHauteGaronne() throws Exception {
     	String mapName = "/home/commetud/3eme Annee MIC/Graphes-et-Algorithmes/Maps/haute-garonne.mapgr";
+    	System.out.println("Tests sur la carte de la Haute-Garonne :\n");
     	int origine,destination;
     	
     	System.out.println("Cas attendu: chemin nul");
@@ -190,8 +194,9 @@ public class DijkstraAlgorithmTest {
     }
     
     @Test
-    public void testWithMapCarreDense() throws Exception {
+    public void testWithMapCarre() throws Exception {
     	String mapName = "/home/commetud/3eme Annee MIC/Graphes-et-Algorithmes/Maps/carre.mapgr";
+    	System.out.println("Tests sur le carré:\n");
     	int origine,destination;
     	
     	System.out.println("Cas attendu: chemin nul");
@@ -286,7 +291,8 @@ public class DijkstraAlgorithmTest {
     	        	else {
     	        		assertEquals(solutionD.getPath().getLength() == solutionB.getPath().getLength(), true);
     	        	}
-        	        System.out.println("Path from "+origine+" to "+destination+" is valid and correct");
+    	        	System.out.println("Path from "+origine+" to "+destination+" is valid and correct | Mode: "+mode+" | Temps: "+solutionD.getPath().getMinimumTravelTime()+" | Distance: "+solutionD.getPath().getLength());
+      
     	        }
     		}
     	}

@@ -1,0 +1,87 @@
+﻿Tests sur notre propre graphe :
+
+Path from 0 to 1 is valid and correct
+Path from 0 to 2 is valid and correct
+Path from 0 to 3 is valid and correct
+Path from 0 to 4 is valid and correct
+Path from 1 to 0 is valid and correct
+Path from 1 to 2 is valid and correct
+Path from 1 to 3 is valid and correct
+Path from 1 to 4 is valid and correct
+Path from 2 to 0 is valid and correct
+Path from 2 to 1 is valid and correct
+Path from 2 to 3 is valid and correct
+Path from 2 to 4 is valid and correct
+Path from 3 to 0 is valid and correct
+Path from 3 to 1 is valid and correct
+Path from 3 to 2 is valid and correct
+Path from 3 to 4 is valid and correct
+Path from 4 to 0 is valid and correct
+Path from 4 to 1 is valid and correct
+Path from 4 to 2 is valid and correct
+Path from 4 to 3 is valid and correct
+
+Tests sur la carte de la Haute-Garonne :
+
+Cas attendu: chemin nul
+Chemin nul, origine = destination
+Chemin nul, origine = destination
+
+Cas attendu: chemin simple
+Path from 19245 to 83337 is valid and correct | Mode: time | Temps: 2333.652122982596 | Distance: 45885.883
+Path from 19245 to 83337 is valid and correct | Mode: length | Temps: 5327.04393865013 | Distance: 40743.805
+
+Cas attendu: origine n'existe pas
+Erreur origine/destination invalide(s)
+Erreur origine/destination invalide(s)
+
+Cas attendu: destination n'existe pas
+Erreur origine/destination invalide(s)
+Erreur origine/destination invalide(s)
+
+Cas attendu: origine et destination n'existent pas
+Erreur origine/destination invalide(s)
+Erreur origine/destination invalide(s)
+
+Tests sur le carré:
+
+Cas attendu: chemin nul
+Chemin nul, origine = destination
+Chemin nul, origine = destination
+
+Cas attendu: chemin simple
+Path from 13 to 21 is valid and correct | Mode: time | Temps: 3869.928 | Distance: 53749.0
+Path from 13 to 21 is valid and correct | Mode: length | Temps: 3869.928 | Distance: 53749.0
+
+Cas attendu: origine n'existe pas
+Erreur origine/destination invalide(s)
+Erreur origine/destination invalide(s)
+
+Cas attendu: destination n'existe pas
+Erreur origine/destination invalide(s)
+Erreur origine/destination invalide(s)
+
+Cas attendu: origine et destination n'existent pas
+Erreur origine/destination invalide(s)
+Erreur origine/destination invalide(s)
+
+Tests sur la carte de l'INSA :
+
+Cas attendu: chemin nul
+Chemin nul, origine = destination
+Chemin nul, origine = destination
+
+Cas attendu: chemin simple
+Path from 527 to 241 is valid and correct | Mode: time | Temps: 157.45740355682372 | Distance: 1472.2611
+Path from 527 to 241 is valid and correct | Mode: length | Temps: 157.45740355682372 | Distance: 1472.2611
+
+Cas attendu: origine n'existe pas
+Erreur origine/destination invalide(s)
+Erreur origine/destination invalide(s)
+Cas attendu: destination n'existe pas
+Erreur origine/destination invalide(s)
+Erreur origine/destination invalide(s)
+
+Cas attendu: origine et destination n'existent pas
+Erreur origine/destination invalide(s)
+Erreur origine/destination invalide(s)
