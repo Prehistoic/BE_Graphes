@@ -20,11 +20,12 @@ public class LabelStar extends Label implements Comparable<Label> {
 	}
 	
 	public float getTotalCost() {
+		this.setCostToDestination();
 		return this.getCost() + this.costToDestination;
 	}
 	
 	public void setCostToDestination() {
-		if(data.getMode() == AbstractInputData.Mode.LENGTH) {
+		if(this.data.getMode() == AbstractInputData.Mode.LENGTH) {
 			this.costToDestination = (float)Point.distance(this.getFather().getDestination().getPoint(),this.data.getDestination().getPoint());
 		}
 		else {
